@@ -1,0 +1,38 @@
+1
+2
+3hello
+4
+5 hello
+hello
+./pipex infile.txt "cat" "wc" outfile.txt
+
+filtrer les ligne contenant hello
+< file1 cat | grep hello | wc -l > file2
+./pipex_bonus filein.txt "sleep 2" "sleep 2" "sleep 2" fileout.txt
+
+
+sort uniq
+cat << STOP | sort | uniq >> infile
+./pipex_bonus here_doc END "sort" "uniq" infile.txt
+
+compte hello
+cat << END | grep hello | wc -l >> file
+./pipex here_doc END "grep hello" "wc -l" infile.txt
+
+valgrind --trace-children=yes --track-fds=yes --leak-check=full --show-leak-kinds=all ./pipex "pipex.c" "wc" "wc" "outfile"
+
+valgrind --trace-children=yes --track-fds=yes --leak-check=full --show-leak-kinds=all ./pipex_bonus here_doc END "sort" "uniq" file
+
+
+
+
+
+a
+d
+d
+d
+d
+ddd
+dEND
+s
+s
